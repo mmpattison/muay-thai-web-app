@@ -26,7 +26,7 @@ props: [
 }
 
 
-.tournament-card .book-title {
+.tournament-card .tournament-name {
   font-size: 1.5rem;
 }
 

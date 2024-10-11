@@ -192,8 +192,9 @@ public class JdbcFighterDao implements FighterDao {
         String fighterLocation = rs.getString("fighter_location");
         String fighterEmail = rs.getString("fighter_email");
         String fighterRegistrationStatus = rs.getString("fighter_registration_status");
+        String imgUrl = rs.getString("img_url");
         Fighter fighter = new Fighter( fighterName, currentWeightClassID, fighterExperienceLevel, fighterAge, fighterHeight,
-                fighterGender, fighterRecord, currentGymId, fighterLocation, fighterEmail, fighterRegistrationStatus);
+                fighterGender, fighterRecord, currentGymId, fighterLocation, fighterEmail, fighterRegistrationStatus, imgUrl);
         return fighter;
     }
 

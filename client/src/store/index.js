@@ -9,6 +9,9 @@ export function createStore(currentToken, currentUser) {
       user: currentUser || {},
     },
     mutations: {
+      SET_FIGHTERS(state, fighters){
+        state.fighters = fighters;
+      },
       SET_TOURNAMENTS(state, tournaments){
         state.tournaments = tournaments;
       },

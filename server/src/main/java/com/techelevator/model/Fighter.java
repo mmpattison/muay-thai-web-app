@@ -19,11 +19,12 @@ public class Fighter {
     private final String fighterLocation;
     private final String fighterEmail;
     private final String fighterRegistrationStatus;
+    private final String imgUrl;
 
 
 
 
-    public Fighter(String fighterName, long currentWeightClassId, String fighterExperienceLevel, int fighterAge, String fighterHeight, String fighterGender, String fighterRecord, long currentGymId, String fighterLocation, String fighterEmail, String fighterRegistrationStatus) {
+    public Fighter(String fighterName, long currentWeightClassId, String fighterExperienceLevel, int fighterAge, String fighterHeight, String fighterGender, String fighterRecord, long currentGymId, String fighterLocation, String fighterEmail, String fighterRegistrationStatus, String imgUrl) {
         this.fighterName = fighterName;
         this.currentWeightClassId = currentWeightClassId;
         this.fighterExperienceLevel = fighterExperienceLevel;
@@ -35,6 +36,7 @@ public class Fighter {
         this.fighterLocation = fighterLocation;
         this.fighterEmail = fighterEmail;
         this.fighterRegistrationStatus = fighterRegistrationStatus;
+        this.imgUrl = imgUrl;
     }
 
 
@@ -81,6 +83,9 @@ public class Fighter {
 
     public String getFighterRegistrationStatus() {
         return fighterRegistrationStatus;
+    }
+    public String getImgUrl() {
+        return imgUrl;
     }
 
 

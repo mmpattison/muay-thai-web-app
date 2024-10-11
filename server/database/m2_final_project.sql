@@ -119,25 +119,25 @@ INSERT INTO fighter (fighter_name, current_weight_class_id, fighter_experience_l
 		fighter_gender, fighter_record, current_gym_id, fighter_location, fighter_email, fighter_registration_status, img_url)
 VALUES
 	('Chun Li', 1, 'B Class', '43', '4ft 10in', 'Female', 'Muay Thai 3-1', 1,
-	 'Columbus, Ohio', 'c.li@gmail.com', 'Confirmed','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN' ),
+	 'Columbus, Ohio', 'c.li@gmail.com', 'Confirmed','https://e7.pngegg.com/pngimages/294/503/png-clipart-street-fighter-v-chun-li-super-street-fighter-iv-arcade-edition-arcade-game-balrog-others-miscellaneous-video-game.png' ),
 	('Rose', 1, 'B Class', '23', '5ft 2in', 'Female', 'Muay Thai 1-0 Smokers 3-0', 3,
-	 'Nashville, Tennessee', 'rboxer@yahoo.com', 'Confirmed',''),
+	 'Nashville, Tennessee', 'rboxer@yahoo.com', 'Confirmed','https://preview.redd.it/what-are-the-chances-for-rose-returning-to-street-fighter-6-v0-2w2jp7yip7yc1.jpeg?width=1080&crop=smart&auto=webp&s=4cc6a25b63a8366b549815bbf8bf2aa49f55d681'),
 	 ('Kitana', 2, 'C Class/Novice', '43', '5ft 5in', 'Female', 'Muay Thai 0', 1,
-	 'Columbus, Ohio', 'KT@gmail.com', 'Confirmed'),
+	 'Columbus, Ohio', 'KT@gmail.com', 'Confirmed','https://cdn-prod.mortalkombat.com/roster/kitana/body.png'),
 	 ('Sheeva', 2, 'C Class/Novice', '38', '5ft 3in', 'Female', 'Muay Thai 0-1 MMA 1-0', 2,
-	 'Chicago, Illinois', 'sheeev@hotmail.com', 'Confirmed'),
+	 'Chicago, Illinois', 'sheeev@hotmail.com', 'Confirmed','https://wiki.supercombo.gg/images/4/47/Umk3_Sheeva_pose.png'),
 	 ('Sonya Blade', 3, 'C Class/Novice', '36', '5ft 6in', 'Female', 'Muay Thai 0', 4,
 	 'Roseville, Minnesota', 'sonya@gmail.com', 'Confirmed','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgarMRhbuJKvqS2-KY6PO9fET3jf6zOvgAiA&s'),
 	 ('Mileena', 3, 'C Class/Novice', '38', '5ft 8in', 'Female', 'Muay Thai 0-1 ', 5,
-	 'Kemptville, Ontario', 'mileena@hotmail.com', 'Confirmed'),
+	 'Kemptville, Ontario', 'mileena@hotmail.com', 'Confirmed','https://upload.wikimedia.org/wikipedia/en/e/ec/Mileena_-_MK1_render.webp'),
 	 ('Sub-Zero', 4, 'A Class/Open', '43', '5ft 8in', 'Male', 'Muay Thai 6-1 Smokers 5-1', 1,
-	 'Columbus, Ohio', 'sz@gmail.com', 'Confirmed'),
+	 'Columbus, Ohio', 'sz@gmail.com', 'Confirmed','https://static.wikia.nocookie.net/mortal-kombat-project/images/2/2b/Sub-Zero_UMK3.png/revision/latest/scale-to-width-down/216?cb=20190228233151'),
 	 ('Johnny Cage', 4, 'A Class/Open', '38', '5ft 7in', 'Male', 'Muay Thai 24-8 8 KO/TKO MMA 1-0', 2,
-	 'Chicago, Illinois', 'JohnnyC@hotmail.com', 'Confirmed'),
+	 'Chicago, Illinois', 'JohnnyC@hotmail.com', 'Confirmed','https://static.wikia.nocookie.net/mkwikia/images/5/59/Cageversus.png/revision/latest?cb=20110129081605'),
 	 ('E. Honda', 5, 'B Class', '31', '5ft 8in', 'Male', 'Muay Thai 6-1', 1,
-	 'Columbus, Ohio', 'honda.e@gmail.com', 'Confirmed'),
+	 'Columbus, Ohio', 'honda.e@gmail.com', 'Confirmed','https://w7.pngwing.com/pngs/993/471/png-transparent-street-fighter-ii-the-world-warrior-super-street-fighter-ii-street-fighter-iv-m-u-g-e-n-e-honda-sumo-miscellaneous-game-superhero.png'),
 	 ('Ryu', 5, 'B Class', '27', '6ft 7in', 'Male', 'Muay Thai 4-1', 2,
-	 'Chicago, Illinois', 'ryu@hotmail.com', 'Confirmed');
+	 'Chicago, Illinois', 'ryu@hotmail.com', 'Confirmed','https://static.wikia.nocookie.net/characterprofile/images/6/63/Ryu_SSB4.png/revision/latest?cb=20160103152408');
 
 	 INSERT INTO fight (blue_corner_id, red_corner_id, winner, loser, win_type, tournament_id)
      VALUES
