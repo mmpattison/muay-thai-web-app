@@ -26,7 +26,8 @@ CREATE TABLE tournament(
 	tournament_name VARCHAR(100) NOT NULL,
 	location VARCHAR(50) NOT NULL,
 	start_date DATE UNIQUE NOT NULL,
-	end_date DATE UNIQUE NULL
+	end_date DATE UNIQUE NULL,
+	img_url VARCHAR(255)
 );
 
 CREATE TABLE weight_class(
@@ -56,7 +57,8 @@ CREATE TABLE fighter (
 	current_gym_id int REFERENCES gym(gym_id) NOT NULL,
 	fighter_location VARCHAR (50) NOT NULL,
 	fighter_email VARCHAR (50) NOT NULL,
-	fighter_registration_status VARCHAR (50) NOT NULL
+	fighter_registration_status VARCHAR (50) NOT NULL,
+	img_url VARCHAR(255)
 );
 
 CREATE TABLE fight(
@@ -92,10 +94,10 @@ VALUES
     ('user', '$2a$10$tmxuYYg1f5T0eXsTPlq/V.DJUKmRHyFbJ.o.liI1T35TFbjs2xiem','ROLE_USER'),
     ('admin','$2a$10$tmxuYYg1f5T0eXsTPlq/V.DJUKmRHyFbJ.o.liI1T35TFbjs2xiem','ROLE_ADMIN');
 
-INSERT INTO tournament (tournament_name, location, start_date, end_date)
+INSERT INTO tournament (tournament_name, location, start_date, end_date, img_url)
 VALUES
-	('TBA Classic World Championships', 'Des Moines, Iowa', '2024-06-19', '2024-06-23'),
-	('Tournament of Champions at The Arnold', 'Columbus, Ohio', '2024-02-28', '2024-03-02');
+	('TBA Classic World Championships', 'Des Moines, Iowa', '2024-06-19', '2024-06-23', 'http://www.tbasanctioning.org/2024Expo/TBAGraphics.png'),
+	('Tournament of Champions at The Arnold', 'Columbus, Ohio', '2024-02-28', '2024-03-02','https://img1.wsimg.com/isteam/ip/9bd496e6-b17e-45f3-8a19-192da667a12a/WebArnold.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25');
 
 INSERT INTO weight_class (weight_class_name, minimum_weight, maximum_weight)
 VALUES
@@ -114,18 +116,18 @@ VALUES
 	('Boss Thai Boxing', 'Kemptville, Ontario', 'Kru Boss', null);
 
 INSERT INTO fighter (fighter_name, current_weight_class_id, fighter_experience_level, fighter_age, fighter_height,
-		fighter_gender, fighter_record, current_gym_id, fighter_location, fighter_email, fighter_registration_status)
+		fighter_gender, fighter_record, current_gym_id, fighter_location, fighter_email, fighter_registration_status, img_url)
 VALUES
 	('Chun Li', 1, 'B Class', '43', '4ft 10in', 'Female', 'Muay Thai 3-1', 1,
-	 'Columbus, Ohio', 'c.li@gmail.com', 'Confirmed' ),
+	 'Columbus, Ohio', 'c.li@gmail.com', 'Confirmed','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN' ),
 	('Rose', 1, 'B Class', '23', '5ft 2in', 'Female', 'Muay Thai 1-0 Smokers 3-0', 3,
-	 'Nashville, Tennessee', 'rboxer@yahoo.com', 'Confirmed'),
+	 'Nashville, Tennessee', 'rboxer@yahoo.com', 'Confirmed',''),
 	 ('Kitana', 2, 'C Class/Novice', '43', '5ft 5in', 'Female', 'Muay Thai 0', 1,
 	 'Columbus, Ohio', 'KT@gmail.com', 'Confirmed'),
 	 ('Sheeva', 2, 'C Class/Novice', '38', '5ft 3in', 'Female', 'Muay Thai 0-1 MMA 1-0', 2,
 	 'Chicago, Illinois', 'sheeev@hotmail.com', 'Confirmed'),
 	 ('Sonya Blade', 3, 'C Class/Novice', '36', '5ft 6in', 'Female', 'Muay Thai 0', 4,
-	 'Roseville, Minnesota', 'sonya@gmail.com', 'Confirmed'),
+	 'Roseville, Minnesota', 'sonya@gmail.com', 'Confirmed','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgarMRhbuJKvqS2-KY6PO9fET3jf6zOvgAiA&s'),
 	 ('Mileena', 3, 'C Class/Novice', '38', '5ft 8in', 'Female', 'Muay Thai 0-1 ', 5,
 	 'Kemptville, Ontario', 'mileena@hotmail.com', 'Confirmed'),
 	 ('Sub-Zero', 4, 'A Class/Open', '43', '5ft 8in', 'Male', 'Muay Thai 6-1 Smokers 5-1', 1,

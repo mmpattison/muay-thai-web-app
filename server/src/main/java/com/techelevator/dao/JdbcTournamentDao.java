@@ -24,7 +24,8 @@ public class JdbcTournamentDao implements  TournamentDao{
             String location = rs.getString("location");
             LocalDate startDate = rs.getDate("start_date").toLocalDate();
             LocalDate endDate = rs.getDate("end_date").toLocalDate();
-            Tournament tournament = new Tournament(tournamentName,location, startDate,endDate);
+            String imgUrl = rs.getString("img_url");
+            Tournament tournament = new Tournament(tournamentName,location, startDate,endDate, imgUrl);
             return tournament;
         }
     };//mapper is anonymous class in java in line implementation

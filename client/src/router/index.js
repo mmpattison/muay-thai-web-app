@@ -6,6 +6,7 @@ import HomeView from '../views/HomeView.vue'
 import LoginView from '../views/LoginView.vue'
 import LogoutView from '../views/LogoutView.vue'
 import RegisterView from '../views/RegisterView.vue'
+import TournamentView from '../views/TournamentView.vue'
 
 
 /**
@@ -21,9 +22,14 @@ const routes = [
       path: '/',
       name: 'home',
       component: HomeView,
-      meta: {
-        requiresAuth: true
-      }
+      // meta: {
+      //   requiresAuth: true
+      // }
+    },
+    {
+      path: '/tournament/:id',
+      name: 'tournament-view',
+      component: TournamentView,
     },
     {
       path: "/login",
