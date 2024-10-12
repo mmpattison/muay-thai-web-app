@@ -20,12 +20,13 @@ public class JdbcTournamentDao implements  TournamentDao{
     private RowMapper<Tournament> mapper = new RowMapper<Tournament>() {
         @Override
         public Tournament mapRow(ResultSet rs, int rowNum) throws SQLException {
+            int id =rs.getInt("tournament_id");
             String tournamentName = rs.getString("tournament_name");
             String location = rs.getString("location");
             LocalDate startDate = rs.getDate("start_date").toLocalDate();
             LocalDate endDate = rs.getDate("end_date").toLocalDate();
             String imgUrl = rs.getString("img_url");
-            Tournament tournament = new Tournament(tournamentName,location, startDate,endDate, imgUrl);
+            Tournament tournament = new Tournament(id, tournamentName,location, startDate,endDate, imgUrl);
             return tournament;
         }
     };//mapper is anonymous class in java in line implementation

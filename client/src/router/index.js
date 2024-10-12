@@ -7,6 +7,9 @@ import LoginView from '../views/LoginView.vue'
 import LogoutView from '../views/LogoutView.vue'
 import RegisterView from '../views/RegisterView.vue'
 import TournamentView from '../views/TournamentView.vue'
+import GymView from '../views/GymView.vue'
+import FightView from '../views/FightView.vue'
+import FighterView from '../views/FighterView.vue'
 
 
 /**
@@ -22,14 +25,41 @@ const routes = [
       path: '/',
       name: 'home',
       component: HomeView,
-      // meta: {
-      //   requiresAuth: true
-      // }
+      meta: {
+        requiresAuth: false
+      }
     },
     {
       path: '/tournament/:id',
       name: 'tournament-view',
       component: TournamentView,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: '/gym/:id',
+      name: 'gym-view',
+      component: GymView,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: '/tournament/:id/fight/:id',
+      name: 'fight-view',
+      component: FightView,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: '/tournament/:id/fighter/:id',
+      name: 'fighter-view',
+      component: FighterView,
+      meta: {
+        requiresAuth: false
+      }
     },
     {
       path: "/login",

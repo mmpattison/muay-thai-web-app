@@ -389,13 +389,16 @@ const ResourceService = {
     return axios.get("/tournaments");
   },
   getFighters(){
-    return fighters;
+    return axios.get('/fighters');
   },
   getFights(){
-    return fights;
+    return axios.get('/fights');
   },
   getWeightClasses(){
-    return weightClasses;
+    return axios.get('/weightClasses');
+  },
+  getGyms(){
+    return axios.get('/gyms');
   },
   getFightsByTournamentId(tournamentId){
     return fights.filter((fight) =>{
@@ -403,12 +406,16 @@ const ResourceService = {
     })
   },
   getFighterById(fighterId) {
-    return fighters.filter ((fighter) =>{
-      if(fighter.fighterId === fighterId){
-        return fighter;
-      }
-    })
+
+    return axios.get(`/fighters/${fighterId}`)
+    // return fighters.filter ((fighter) =>{
+    //   if(fighter.fighterId === fighterId){
+    //     return fighter;
+    //   }
+    // })
   },
+
+  
 
   getFightById(fightId){
     return fights.filter ( (fight) => {

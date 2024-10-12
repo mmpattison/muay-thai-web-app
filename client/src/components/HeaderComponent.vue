@@ -109,7 +109,7 @@ nav button {
   font-weight: 400;
   text-transform: uppercase;
   border-bottom: 1px solid #707070;
-  padding-top: 30px;
+  padding: 10px;
 }
 .social-icons {
   display: flex;

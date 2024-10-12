@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 public class Tournament {
 
+    private final int id;
     private final String tournamentName;
     private final String location;
     private final LocalDate startDate;
@@ -12,12 +13,18 @@ public class Tournament {
 
 
 
-    public Tournament(String tournamentName, String location, LocalDate startDate, LocalDate endDate, String imgUrl) {
+
+    public Tournament(int id, String tournamentName, String location, LocalDate startDate, LocalDate endDate, String imgUrl) {
+        this.id = id;
         this.tournamentName = tournamentName;
         this.location = location;
         this.startDate = startDate;
         this.endDate = endDate;
         this.imgUrl = imgUrl;
+    }
+
+    public int getId() {
+        return id;
     }
     public String getTournamentName() {
         return tournamentName;
