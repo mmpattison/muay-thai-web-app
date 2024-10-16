@@ -1,7 +1,9 @@
 package com.techelevator.controller;
 
+import com.techelevator.dao.FightDao;
 import com.techelevator.dao.FighterDao;
 import com.techelevator.dao.TournamentDao;
+import com.techelevator.model.Fight;
 import com.techelevator.model.Fighter;
 import com.techelevator.model.Tournament;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -18,9 +20,12 @@ public class TournamentsController {
     private final TournamentDao tournamentDao;
     private final FighterDao fighterDao;
 
-    public TournamentsController(TournamentDao tournamentDao, FighterDao fighterDao) {
+    private final FightDao fightDao;
+
+    public TournamentsController(TournamentDao tournamentDao, FighterDao fighterDao, FightDao fightDao) {
         this.tournamentDao = tournamentDao;
         this.fighterDao = fighterDao;
+        this.fightDao = fightDao;
     }
 
 
@@ -36,6 +41,12 @@ public class TournamentsController {
     @GetMapping(path = "/{tournamentId}/fighters")
     public List <Fighter> getAllFightersForTournament(@PathVariable long tournamentId){
         return fighterDao.getAllFightersForTournament(tournamentId);
+    }
+
+    @PreAuthorize("permitAll")
+    @GetMapping(path = "/{tournamentId}/fights")
+    public List <Fight> getAllFightsForTournament (@PathVariable long tournamentId){
+        return fightDao.getAllFightsForTournament(tournamentId);
     }
 
 

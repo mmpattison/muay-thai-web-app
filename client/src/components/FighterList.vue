@@ -1,7 +1,9 @@
 <template>
   <section>
     <h2>Fighters</h2>
-    <fighter-card />
+    <div class="fighter-list">
+    <fighter-card v-for="fighter in fighters" :key="fighter.id" :fighter="fighter"/>
+  </div>
   </section>
 </template>
 
@@ -21,5 +23,8 @@ export default {
 </script>
 
 <style>
-
+.fighter-list {
+  display: flex;
+  justify-content: space-evenly;
+}
 </style>

@@ -23,4 +23,5 @@ public interface FighterDao {
     int deleteFighterById(long fighterId);
 
 
+    List<Fighter> getAllFightersForFight(long fightId);
 }

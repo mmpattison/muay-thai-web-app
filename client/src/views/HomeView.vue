@@ -1,5 +1,14 @@
 <template>
-  <div><tournament-list /></div>
+  <div><tournament-list id="tournament-list"/></div>
+  <section id="about">
+      <p>
+        Quality not Quantity!
+        The TBA-SA was not established to eliminate other sanctioning bodies. 
+        The TBA-SA is here to support the TBA-USA and promote Muay Thai, not FCR/IR Kickboxing, MMA, or Boxing. 
+        By focusing exclusively on Muay Thai, it allows the TBA-SA to host professionally ran Muay Thai tournaments, and sanction Muay Thai shows in North America, 
+        where the integrity of Muay Thai is upheld with qualified Muay Thai officials and rules.
+    </p>
+  </section>
 </template>
 
 <script>
@@ -19,4 +28,19 @@ export default {
 
 <style>
 
+
+
+#about {
+    grid-area: main;
+    /* width: 500px; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: #eef4ed;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 10px;
+
+}
 </style>

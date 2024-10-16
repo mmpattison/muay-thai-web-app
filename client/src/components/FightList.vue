@@ -1,19 +1,16 @@
 <template>
-  <section id="fights-table">
-    <table>
-      <thead>
-        <tr>
-          
-        </tr>
-      </thead>
-
-      <tbody></tbody>
-    </table>
+  <section>
+    <h2>Fighters</h2>
+    <div class="fight-list">
+      
+    </div>
   </section>
 </template>
 
 <script>
-export default {};
+
+
+
 </script>
 
 <style>

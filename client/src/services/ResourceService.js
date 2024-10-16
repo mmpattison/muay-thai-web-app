@@ -7,253 +7,7 @@ const allResources = [
   // add objects to represent your custom application resources here
 ];
 
-const tournaments = [
-  {
-      id: 1,
-      tournamentName: "TBA Classic World Championships",
-      location: "Des Moines, Iowa",
-      startDate: "2024-06-19",
-      endDate: "2024-06-23"
-  },
-  {   
-      id: 2,
-      tournamentName: "Tournament of Champions at The Arnold",
-      location: "Columbus, Ohio",
-      startDate: "2024-02-28",
-      endDate: "2024-03-02"
-  }
-];
 
-const fighters = [
-  {
-      id: 1,
-      fighterName: "Rose",
-      currentWeightClassId: 1,
-      fighterExperienceLevel: "B Class",
-      fighterAge: 23,
-      fighterHeight: "5ft 2in",
-      fighterGender: "Female",
-      fighterRecord: "Muay Thai 1-0 Smokers 3-0",
-      currentGymId: 3,
-      fighterLocation: "Nashville, Tennessee",
-      fighterEmail: "rboxer@yahoo.com",
-      fighterRegistrationStatus: "Confirmed"
-  },
-  {
-      id: 2,
-      fighterName: "Kitana",
-      currentWeightClassId: 2,
-      fighterExperienceLevel: "C Class/Novice",
-      fighterAge: 43,
-      fighterHeight: "5ft 5in",
-      fighterGender: "Female",
-      fighterRecord: "Muay Thai 0",
-      currentGymId: 1,
-      fighterLocation: "Columbus, Ohio",
-      fighterEmail: "KT@gmail.com",
-      fighterRegistrationStatus: "Confirmed"
-  },
-  {
-      id: 3,
-      fighterName: "Sheeva",
-      currentWeightClassId: 2,
-      fighterExperienceLevel: "C Class/Novice",
-      fighterAge: 38,
-      fighterHeight: "5ft 3in",
-      fighterGender: "Female",
-      fighterRecord: "Muay Thai 0-1 MMA 1-0",
-      currentGymId: 2,
-      fighterLocation: "Chicago, Illinois",
-      fighterEmail: "sheeev@hotmail.com",
-      fighterRegistrationStatus: "Confirmed"
-  },
-  {
-      id: 4,
-      fighterName: "Sonya Blade",
-      currentWeightClassId: 3,
-      fighterExperienceLevel: "C Class/Novice",
-      fighterAge: 36,
-      fighterHeight: "5ft 6in",
-      fighterGender: "Female",
-      fighterRecord: "Muay Thai 0",
-      currentGymId: 4,
-      fighterLocation: "Roseville, Minnesota",
-      fighterEmail: "sonya@gmail.com",
-      fighterRegistrationStatus: "Confirmed"
-  },
-  {
-      id: 5,
-      fighterName: "Mileena",
-      currentWeightClassId: 3,
-      fighterExperienceLevel: "C Class/Novice",
-      fighterAge: 38,
-      fighterHeight: "5ft 8in",
-      fighterGender: "Female",
-      fighterRecord: "Muay Thai 0-1",
-      currentGymId: 5,
-      fighterLocation: "Kemptville, Ontario",
-      fighterEmail: "mileena@hotmail.com",
-      fighterRegistrationStatus: "Confirmed"
-  },
-  {
-      id: 6,
-      fighterName: "Sub-Zero",
-      currentWeightClassId: 4,
-      fighterExperienceLevel: "A Class/Open",
-      fighterAge: 43,
-      fighterHeight: "5ft 8in",
-      fighterGender: "Male",
-      fighterRecord: "Muay Thai 6-1 Smokers 5-1",
-      currentGymId: 1,
-      fighterLocation: "Columbus, Ohio",
-      fighterEmail: "sz@gmail.com",
-      fighterRegistrationStatus: "Confirmed"
-  },
-  {
-      id: 7,
-      fighterName: "E. Honda",
-      currentWeightClassId: 5,
-      fighterExperienceLevel: "B Class",
-      fighterAge: 31,
-      fighterHeight: "5ft 8in",
-      fighterGender: "Male",
-      fighterRecord: "Muay Thai 6-1",
-      currentGymId: 1,
-      fighterLocation: "Columbus, Ohio",
-      fighterEmail: "honda.e@gmail.com",
-      fighterRegistrationStatus: "Confirmed"
-  },
-  {
-      id: 8,
-      fighterName: "Ryu",
-      currentWeightClassId: 5,
-      fighterExperienceLevel: "B Class",
-      fighterAge: 27,
-      fighterHeight: "6ft 7in",
-      fighterGender: "Male",
-      fighterRecord: "Muay Thai 4-1",
-      currentGymId: 2,
-      fighterLocation: "Chicago, Illinois",
-      fighterEmail: "ryu@hotmail.com",
-      fighterRegistrationStatus: "Confirmed"
-  },
-  {
-      id: 9,
-      fighterName: "Chun Li",
-      currentWeightClassId: 1,
-      fighterExperienceLevel: "B Class",
-      fighterAge: 43,
-      fighterHeight: "4ft 10in",
-      fighterGender: "Female",
-      fighterRecord: "Muay Thai 3-1",
-      currentGymId: 1,
-      fighterLocation: "Columbus, Ohio",
-      fighterEmail: "c.li@gmail.com",
-      fighterRegistrationStatus: "Confirmed"
-  },
-  {
-      id: 10,
-      fighterName: "Johnny Cage",
-      currentWeightClassId: 4,
-      fighterExperienceLevel: "A Class/Open",
-      fighterAge: 38,
-      fighterHeight: "5ft 7in",
-      fighterGender: "Male",
-      fighterRecord: "Muay Thai 24-8 8 KO/TKO MMA 1-0",
-      currentGymId: 2,
-      fighterLocation: "Chicago, Illinois",
-      fighterEmail: "JohnnyC@hotmail.com",
-      fighterRegistrationStatus: "Confirmed"
-  },
-  {
-      id: 11,
-      fighterName: "Nina Williams",
-      currentWeightClassId: 3,
-      fighterExperienceLevel: "B Class",
-      fighterAge: 35,
-      fighterHeight: "4ft 10in",
-      fighterGender: "Female",
-      fighterRecord: "1-0",
-      currentGymId: 1,
-      fighterLocation: "Columbus, Ohio",
-      fighterEmail: "fighter@gmail.com",
-      fighterRegistrationStatus: "Confirmed"
-  }
-];
-
-
-const fights = [
-  {
-      id: 1,
-      blueCornerId: 1,
-      redCornerId: 2,
-      winner: "Chun Li",
-      loser: "Rose",
-      winType: "TKO",
-      tournamentId: 1,
-      fightName: "Chun Li vs Rose"
-  },
-  {
-      id: 2,
-      blueCornerId: 3,
-      redCornerId: 4,
-      winner: "Sheeva",
-      loser: "Kitana",
-      winType: "Split",
-      tournamentId: 2,
-      fightName: "Kitana vs Sheeva"
-  },
-  {
-      id: 3,
-      blueCornerId: 3,
-      redCornerId: 4,
-      winner: "Sheeva",
-      loser: "Kitana",
-      winType: "KO",
-      tournamentId: 1,
-      fightName: "Sheeva vs Kitana"
-  },
-  {
-      id: 4,
-      blueCornerId: 5,
-      redCornerId: 6,
-      winner: "Sonya Blade",
-      loser: "Mileena",
-      winType: "Unanimous",
-      tournamentId: 1,
-      fightName: "Mileena vs Sonya Blade"
-  },
-  {
-      id: 5,
-      blueCornerId: 7,
-      redCornerId: 8,
-      winner: "Johnny Cage",
-      loser: "Sub-Zero",
-      winType: "Split",
-      tournamentId: 1,
-      fightName: "Johnny Cage vs Sub-Zero"
-  },
-  {
-      id: 6,
-      blueCornerId: 8,
-      redCornerId: 7,
-      winner: "Sub-Zero",
-      loser: "Johnny Cage",
-      winType: "Split",
-      tournamentId: 2,
-      fightName: "Sub-Zero vs Johnny Cage"
-  },
-  {
-      id: 7,
-      blueCornerId: 9,
-      redCornerId: 10,
-      winner: "E. Honda",
-      loser: "Ryu",
-      winType: "Forfeit",
-      tournamentId: 2,
-      fightName: "Ryu vs E. Honda"
-  }
-];
 
 
 const weightClasses = [
@@ -401,28 +155,35 @@ const ResourceService = {
     return axios.get('/gyms');
   },
   getFightsByTournamentId(tournamentId){
-    return fights.filter((fight) =>{
-      return fight.tournamentId === tournamentId;
-    })
+    return axios.get(`/tournaments/${tournamentId}/fights`);
+  },
+  getFightersByGymId(gymId){
+    return axios.get(`/gyms/${gymId}/fighters`)
+  },
+  getFightersByTournamentId(tournamentId){
+    // alert ("getFightersByTournamentId-"+ tournamentId );
+    return axios.get(`/tournaments/${tournamentId}/fighters`);
+  },
+  getFightersByFightId(fightId){
+    return axios.get(`/tournaments/${fightId}/fighters`);
   },
   getFighterById(fighterId) {
 
-    return axios.get(`/fighters/${fighterId}`)
-    // return fighters.filter ((fighter) =>{
-    //   if(fighter.fighterId === fighterId){
-    //     return fighter;
-    //   }
-    // })
+    return axios.get(`/fighters/${fighterId}`);
+    
   },
 
-  
-
   getFightById(fightId){
-    return fights.filter ( (fight) => {
-      if(fight.id === fightId){
-        return fight;
-      }
-    })
+    return axios.get(`/fights/${fightId}`)
+   
+  },
+
+  addFighter(fighter) {
+    return axios.post('/fighters', fighter)
+  },
+
+  updateFighter(fighterId, fighter){
+    return axios.put(`/fighters/${fighterId}`, fighter)
   }
 
 

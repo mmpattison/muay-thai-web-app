@@ -1,22 +1,14 @@
 <template>
   <div id="muay-thai-app">
-
-      <header-component id="header-component" class="header"/>
+   
+      <header-component class="header"/>
     
      
-    <main>
+    <main id="main">
       <router-view />
-      <section id="about">
-      <p>
-        Quality not Quantity!
-        The TBA-SA was not established to eliminate other sanctioning bodies. 
-        The TBA-SA is here to support the TBA-USA and promote Muay Thai, not FCR/IR Kickboxing, MMA, or Boxing. 
-        By focusing exclusively on Muay Thai, it allows the TBA-SA to host professionally ran Muay Thai tournaments, and sanction Muay Thai shows in North America, 
-        where the integrity of Muay Thai is upheld with qualified Muay Thai officials and rules.
-    </p>
-  </section>
+      
     </main>
-    <footer>&copy; 2024 All Rights Reserved</footer>
+    <footer id="footer">&copy; 2024 All Rights Reserved</footer>
   </div>
 </template>
 
@@ -41,9 +33,9 @@ export default {
     "footer         footer        footer";
     
     grid-template-columns: 1fr 3fr 1.5fr;
-    grid-template-rows: 1fr .5fr 3fr .15fr;
+    grid-template-rows: 1fr 3fr .15fr;
     gap: 10px;
-    height: 100vh;
+    /* height: 100vh; */
     margin:5px;
     overflow-x: hidden;
     width: 100vw;
@@ -55,23 +47,22 @@ body{
   background-color: #134074;
 }
 
-#header-component {
+main, header, footer {
+    border-radius: 5px;
+    padding: 5px;
+}
+
+header {
   grid-area: header;
 }
-   
-
-
-  #about {
-    grid-area: main;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+  main{
+    grid-area:main;
     background-color: #8da9c4;
-    justify-content: center;
-    border-radius: 5px;
-    padding: 10px;
+    
+    /* overflow: hidden; */
+  }
 
-}
+
 
   footer {
     grid-area: footer;

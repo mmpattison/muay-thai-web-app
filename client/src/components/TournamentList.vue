@@ -11,7 +11,8 @@
 </template>
 
 <script>
-import TournamentCard from './TournamentCard.vue';
+import TournamentCard from "./TournamentCard.vue"
+
 export default {
 
   components: {
@@ -24,6 +25,8 @@ export default {
   }
 }
 </script>
+
+
 
 <style>
 #tournament

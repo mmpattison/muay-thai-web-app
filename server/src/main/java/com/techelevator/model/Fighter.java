@@ -2,7 +2,7 @@ package com.techelevator.model;
 
 public class Fighter {
 
-
+    private final int id;
     private final String fighterName;
 
     private final long currentWeightClassId;
@@ -24,7 +24,8 @@ public class Fighter {
 
 
 
-    public Fighter(String fighterName, long currentWeightClassId, String fighterExperienceLevel, int fighterAge, String fighterHeight, String fighterGender, String fighterRecord, long currentGymId, String fighterLocation, String fighterEmail, String fighterRegistrationStatus, String imgUrl) {
+    public Fighter(int id, String fighterName, long currentWeightClassId, String fighterExperienceLevel, int fighterAge, String fighterHeight, String fighterGender, String fighterRecord, long currentGymId, String fighterLocation, String fighterEmail, String fighterRegistrationStatus, String imgUrl) {
+        this.id = id;
         this.fighterName = fighterName;
         this.currentWeightClassId = currentWeightClassId;
         this.fighterExperienceLevel = fighterExperienceLevel;
@@ -39,7 +40,9 @@ public class Fighter {
         this.imgUrl = imgUrl;
     }
 
-
+    public int getId() {
+        return id;
+    }
 
     public String getFighterName() {
         return fighterName;

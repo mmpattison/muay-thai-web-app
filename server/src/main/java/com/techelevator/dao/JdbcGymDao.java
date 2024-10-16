@@ -37,11 +37,12 @@ public class JdbcGymDao implements GymDao{
     }
 
     private static Gym mapRowToGym(SqlRowSet rs) {
+        int id =rs.getInt("gym_id");
         String gymName = rs.getString("gym_name");
         String gymLocation = rs.getString("gym_location");
         String kruName = rs.getString("kru_name");
         String overallGymRecord = rs.getString("overall_gym_record");
-        Gym gym = new Gym(gymName, gymLocation, kruName, overallGymRecord);
+        Gym gym = new Gym(id, gymName, gymLocation, kruName, overallGymRecord);
         return gym;
     }
 

@@ -48,13 +48,15 @@ public class JdbcFightDao implements  FightDao{
     }
 
     private static Fight mapRowToFight(SqlRowSet rs) {
+        int id =rs.getInt("fight_id");
         int blueCornerId = rs.getInt("blue_corner_id");
         int redCornerId = rs.getInt("red_corner_id");
         String winner = rs.getString("winner");
         String loser = rs.getString("loser");
         String winType = rs.getString("win_type");
         int tournamentId = rs.getInt("tournament_id");
-        Fight fight = new Fight(blueCornerId, redCornerId, winner, loser, winType, tournamentId);
+        String fightName = rs.getString("fight_name");
+        Fight fight = new Fight(id, blueCornerId, redCornerId, winner, loser, winType, tournamentId, fightName);
         return fight;
     }
 }

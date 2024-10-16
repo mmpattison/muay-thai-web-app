@@ -36,10 +36,11 @@ public class JdbcWeightClassDao implements WeightClassDao{
     }
 
     private WeightClass mapRowToWeightClass(SqlRowSet rs) {
+        int id =rs.getInt("weight_class_id");
         String weightClassName = rs.getString("weight_class_name");
         double minimumWeight = rs.getDouble("minimum_weight");
         double maximumWeight = rs.getDouble("maximum_weight");
-        WeightClass weightClass = new WeightClass(weightClassName, minimumWeight, maximumWeight);
+        WeightClass weightClass = new WeightClass(id, weightClassName, minimumWeight, maximumWeight);
         return weightClass;
     }
 }

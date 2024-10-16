@@ -68,7 +68,8 @@ CREATE TABLE fight(
 	winner VARCHAR (50) NOT NULL,
 	loser VARCHAR (50) NOT NULL,
 	win_type VARCHAR (50) NOT NULL,
-	tournament_id int REFERENCES tournament(tournament_id)NOT NULL
+	tournament_id int REFERENCES tournament(tournament_id)NOT NULL,
+	fight_name VARCHAR (200) NOT NULL
 );
 
 
@@ -131,23 +132,23 @@ VALUES
 	 ('Mileena', 3, 'C Class/Novice', '38', '5ft 8in', 'Female', 'Muay Thai 0-1 ', 5,
 	 'Kemptville, Ontario', 'mileena@hotmail.com', 'Confirmed','https://upload.wikimedia.org/wikipedia/en/e/ec/Mileena_-_MK1_render.webp'),
 	 ('Sub-Zero', 4, 'A Class/Open', '43', '5ft 8in', 'Male', 'Muay Thai 6-1 Smokers 5-1', 1,
-	 'Columbus, Ohio', 'sz@gmail.com', 'Confirmed','https://static.wikia.nocookie.net/mortal-kombat-project/images/2/2b/Sub-Zero_UMK3.png/revision/latest/scale-to-width-down/216?cb=20190228233151'),
+	 'Columbus, Ohio', 'sz@gmail.com', 'Confirmed','https://wiki.supercombo.gg/images/5/50/Umk3_Classic_Sub-Zero_pose.png'),
 	 ('Johnny Cage', 4, 'A Class/Open', '38', '5ft 7in', 'Male', 'Muay Thai 24-8 8 KO/TKO MMA 1-0', 2,
-	 'Chicago, Illinois', 'JohnnyC@hotmail.com', 'Confirmed','https://static.wikia.nocookie.net/mkwikia/images/5/59/Cageversus.png/revision/latest?cb=20110129081605'),
+	 'Chicago, Illinois', 'JohnnyC@hotmail.com', 'Confirmed','https://upload.wikimedia.org/wikipedia/en/7/7b/Johnny_Render_mk_11.png'),
 	 ('E. Honda', 5, 'B Class', '31', '5ft 8in', 'Male', 'Muay Thai 6-1', 1,
 	 'Columbus, Ohio', 'honda.e@gmail.com', 'Confirmed','https://w7.pngwing.com/pngs/993/471/png-transparent-street-fighter-ii-the-world-warrior-super-street-fighter-ii-street-fighter-iv-m-u-g-e-n-e-honda-sumo-miscellaneous-game-superhero.png'),
 	 ('Ryu', 5, 'B Class', '27', '6ft 7in', 'Male', 'Muay Thai 4-1', 2,
-	 'Chicago, Illinois', 'ryu@hotmail.com', 'Confirmed','https://static.wikia.nocookie.net/characterprofile/images/6/63/Ryu_SSB4.png/revision/latest?cb=20160103152408');
+	 'Chicago, Illinois', 'ryu@hotmail.com', 'Confirmed','https://assets.vg247.com/current//2014/07/o7vij6.png');
 
-	 INSERT INTO fight (blue_corner_id, red_corner_id, winner, loser, win_type, tournament_id)
+	 INSERT INTO fight (blue_corner_id, red_corner_id, winner, loser, win_type, tournament_id, fight_name)
      VALUES
-     	(1, 2, 'Chun Li', 'Rose', 'TKO', 1),
-     	(3, 4, 'Sheeva', 'Kitana', 'Split', 2),
-     	(3, 4, 'Sheeva', 'Kitana', 'KO', 1),
-     	(5, 6, 'Sonya Blade', 'Mileena', 'Unanimous', 1),
-     	(7, 8, 'Johnny Cage', 'Sub-Zero', 'Split', 1 ),
-     	(8, 7, 'Sub-Zero', 'Johnny Cage', 'Split', 2),
-     	(9, 10, 'E. Honda', 'Ryu', 'Forfeit', 2 );
+     	(1, 2, 'Chun Li', 'Rose', 'TKO', 1, 'Chun Li vs Rose'),
+     	(3, 4, 'Sheeva', 'Kitana', 'Split', 2, 'Kitana vs Sheeva'),
+     	(3, 4, 'Sheeva', 'Kitana', 'KO', 1, 'Sheeva vs Kitana'),
+     	(5, 6, 'Sonya Blade', 'Mileena', 'Unanimous', 1, 'Mileena vs Sonya Blade'),
+     	(7, 8, 'Johnny Cage', 'Sub-Zero', 'Split', 1, 'Johnny Cage vs Sub-Zero' ),
+     	(8, 7, 'Sub-Zero', 'Johnny Cage', 'Split', 2, 'Sub-Zero vs Johnny Cage'),
+     	(9, 10, 'E. Honda', 'Ryu', 'Forfeit', 2, 'Ryu vs E.Honda' );
 
 
      INSERT INTO registration (tournament_id, fighter_id, weight_class_id, gym_id)

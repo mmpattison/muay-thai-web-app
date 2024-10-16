@@ -63,6 +63,20 @@ public class JdbcFighterDao implements FighterDao {
     }
 
     @Override
+    public List<Fighter> getAllFightersForFight(long fightId){
+        List <Fighter> fighters = new ArrayList<>();
+        String sql = "Select * FROM fight WHERE red_corner_id =? OR blue_corner_id=?";
+
+        SqlRowSet rs = template.queryForRowSet(sql, fightId);
+
+        while (rs.next()){
+            Fighter fighter = mapRowToFighter(rs);
+            fighters.add(fighter);
+        }
+        return fighters;
+    }
+
+    @Override
     public List<Fighter> getAllFightersForWeightClass(long weightClassId){
         List <Fighter> fighters = new ArrayList<>();
         String sql = "SELECT * FROM fighter WHERE current_weight_class_id = ?";
@@ -180,7 +194,7 @@ public class JdbcFighterDao implements FighterDao {
     }
 
     private Fighter mapRowToFighter(SqlRowSet rs) {
-
+        int id =rs.getInt("fighter_id");
         String fighterName = rs.getString("fighter_name");
         int currentWeightClassID = rs.getInt("current_weight_class_id");
         String fighterExperienceLevel = rs.getString("fighter_experience_level");
@@ -193,7 +207,7 @@ public class JdbcFighterDao implements FighterDao {
         String fighterEmail = rs.getString("fighter_email");
         String fighterRegistrationStatus = rs.getString("fighter_registration_status");
         String imgUrl = rs.getString("img_url");
-        Fighter fighter = new Fighter( fighterName, currentWeightClassID, fighterExperienceLevel, fighterAge, fighterHeight,
+        Fighter fighter = new Fighter(id, fighterName, currentWeightClassID, fighterExperienceLevel, fighterAge, fighterHeight,
                 fighterGender, fighterRecord, currentGymId, fighterLocation, fighterEmail, fighterRegistrationStatus, imgUrl);
         return fighter;
     }

@@ -7,7 +7,12 @@ export function createStore(currentToken, currentUser) {
       tournaments: [],
       token: currentToken || '',
       user: currentUser || {},
+      fighters:[],
+      fights: [],
+      gyms: [],
+      
     },
+    
     mutations: {
       SET_FIGHTERS(state, fighters){
         state.fighters = fighters;

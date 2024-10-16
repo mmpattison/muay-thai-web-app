@@ -46,7 +46,7 @@ const routes = [
       }
     },
     {
-      path: '/tournament/:id/fight/:id',
+      path: '/fight/:id',
       name: 'fight-view',
       component: FightView,
       meta: {
@@ -54,7 +54,7 @@ const routes = [
       }
     },
     {
-      path: '/tournament/:id/fighter/:id',
+      path: '/fighter/:id',
       name: 'fighter-view',
       component: FighterView,
       meta: {

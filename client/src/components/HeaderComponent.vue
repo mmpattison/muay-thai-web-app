@@ -32,19 +32,23 @@
     <section id="socials">
       <ul class="social-icons">
         <li>
-          <a href="https://www.facebook.com/TBA.Sanctioning"
-            ><i class="fab fa-facebook fa-3x"></i
-          ></a>
+          icon
+
+          <!-- <a href="https://www.facebook.com/TBA.Sanctioning">
+            <font-awesome-icon :icon="['fab', 'square-facebook']" />
+          </a> -->
         </li>
         <li>
-          <a href="https://www.instagram.com/thaiboxingassoc_sanctioning/"
-            ><i class="fab fa-instagram fa-3x"></i
-          ></a>
+          icon
+          <!-- <a href="https://www.instagram.com/thaiboxingassoc_sanctioning/">
+            <font-awesome-icon :icon="['fab', 'instagram']" />
+          </a> -->
         </li>
         <li>
-          <a href="https://twitter.com/pammypanda1"
-            ><i class="fab fa-twitter fa-3x"></i
-          ></a>
+          icon
+          <!-- <a href="https://twitter.com/pammypanda1">
+            <font-awesome-icon :icon="['fab', 'x-twitter']" />
+          </a> -->
         </li>
       </ul>
     </section>
@@ -88,8 +92,9 @@ export default {};
   grid-area: title;
   display: flex;
   justify-content: center;
-  align-items: center;
-  font-size: 2em;
+  align-items: bottom;
+  /* font-size: 2em; */
+  font-size: 2rem;
 
   /* width: 2fr; */
 }
@@ -103,13 +108,14 @@ nav {
   flex-wrap: wrap;
   border-radius: 5px;
 }
-nav button {
+button {
   font-family: "Oswald", sans-serif;
   font-size: 2rem;
   font-weight: 400;
   text-transform: uppercase;
   border-bottom: 1px solid #707070;
   padding: 10px;
+  border-radius: 5px;
 }
 .social-icons {
   display: flex;

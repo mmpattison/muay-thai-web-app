@@ -6,7 +6,7 @@
     }"
   >
     <div class="tournament-card">
-      <img :src="tournament.imgUrl" />
+      <img class="tournament-card-img" :src="tournament.imgUrl" />
       <h2 class="tournament-name">
         {{ tournament.tournamentName }}
       </h2>
@@ -32,16 +32,28 @@ export default {
   height: 550px;
   margin: 20px;
   background-color: #eef4ed;
+  align-content: center;
+}
+
+.tournament-card-img {
+  padding: 5px;
 }
 
 .tournament-card .tournament-name {
   font-size: 1.5rem;
+  /* align-content: center; */
+  text-align: center;
 }
 
 .tournament-card .location {
   font-size: 1rem;
+  
+  text-align: center;
 }
 .tournament-card .dates {
   font-size: 1rem;
+  /* align-content: center; */
+  justify-items: center;
+  text-align: center;
 }
 </style>
