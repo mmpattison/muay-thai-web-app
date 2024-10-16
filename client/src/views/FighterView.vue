@@ -1,37 +1,35 @@
 <template>
   <div id="fighter-main">
     <p id="name">{{ fighter.fighterName }}</p>
-    
-  <div id="fighter">
-    <img :src="fighter.imgUrl"  class="fighter-img" />
-    <ul id="fighter-details">
-      <li>Gym name but only have gym id in table</li>
-      <li>{{ fighter.fighterLocation }}</li>
-      <li>{{ fighter.fighterExperienceLevel }}</li>
-      <li>weight class name but only have weightclass id</li>
-      <li>{{ fighter.fighterHeight }}</li>
-      <li>{{ fighter.fighterAge }}</li>
-      <li>{{ fighter.fighterRecord }}</li>
-      
-    </ul>
-    
-  </div>
+
+    <div id="fighter">
+      <div id="fighter-img-box">
+        <img :src="fighter.imgUrl" class="fighter-img" />
+      </div>
+      <ul id="fighter-details">
+        <li>Gym name but only have gym id in table</li>
+        <li>{{ fighter.fighterLocation }}</li>
+        <li>{{ fighter.fighterExperienceLevel }}</li>
+        <li>weight class name but only have weightclass id</li>
+        <li>{{ fighter.fighterHeight }}</li>
+        <li>{{ fighter.fighterAge }}</li>
+        <li>{{ fighter.fighterRecord }}</li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
-import { ResourceService } from '../services/ResourceService';
+import { ResourceService } from "../services/ResourceService";
 export default {
-computed: {
-  fighter(){
-  return this.$store.state.fighters.find((fighter) => {
-    return fighter.id == this.$route.params.id;
-  });
-}
-
-
-}
-}
+  computed: {
+    fighter() {
+      return this.$store.state.fighters.find((fighter) => {
+        return fighter.id == this.$route.params.id;
+      });
+    },
+  },
+};
 </script>
 
 <style>
@@ -41,7 +39,7 @@ computed: {
     "name"
     "fighter";
   justify-items: center;
-  row-gap: 20px; 
+  row-gap: 20px;
 }
 
 #name {
@@ -55,13 +53,16 @@ computed: {
 #fighter {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 40px; 
+  column-gap: 40px;
   align-items: center;
   justify-content: center;
 }
 
-#fighter-img {
+#fighter-img-box {
   
+}
+
+#fighter-img {
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -76,6 +77,5 @@ computed: {
   flex-direction: column;
   gap: 20px;
   text-align: center;
-  
 }
 </style>

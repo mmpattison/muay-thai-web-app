@@ -11,11 +11,19 @@
 import FighterCard from "./FighterCard.vue";
 
 export default {
+  props: [
+  "blueCornerFighter", "redCornerFighter"
+  ],
   components: {
     FighterCard,
   },
   computed: {
     fighters() {
+      if(this.blueCornerFighter && this.redCornerFighter){
+        return this.$store.state.fighters.filter((fighter)=>{
+          return fighter.id == this.blueCornerFighter.id || fighter.id == this.redCornerFighter.id;
+        });
+      }
       return this.$store.state.fighters;
     },
   },
@@ -27,4 +35,6 @@ export default {
   display: flex;
   justify-content: space-evenly;
 }
+
+
 </style>

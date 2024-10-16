@@ -15,7 +15,7 @@
 <script>
 export default {
 props: [
-    "fighter"
+    "fighter", "blueCornerFighter", "redCornerFighter"
 ]
 }
 </script>

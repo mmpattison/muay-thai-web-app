@@ -62,6 +62,10 @@ header {
     /* overflow: hidden; */
   }
 
+  li {
+    list-style: none;
+  }
+
 
 
   footer {
@@ -69,6 +73,7 @@ header {
     background-color: #ddd;
     text-align: center;
     padding: 10px;
+    
 }
     
 

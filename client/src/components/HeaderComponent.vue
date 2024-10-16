@@ -32,11 +32,17 @@
     <section id="socials">
       <ul class="social-icons">
         <li>
-          icon
+         
 
           <!-- <a href="https://www.facebook.com/TBA.Sanctioning">
-            <font-awesome-icon :icon="['fab', 'square-facebook']" />
+            <font-awesome-icon :icon="['fas', 'trash-can']" class="icon" title="this"/>
           </a> -->
+          <font-awesome-icon
+      class="{ 'view-icon', active: cardView }"
+      v-on:click="cardView = true"
+      icon="fa-solid fa-grip"
+      title="View tiles"
+    />
         </li>
         <li>
           icon
@@ -87,6 +93,11 @@ export default {};
   padding: 10px;
 }
 
+.icon {
+  cursor: pointer;
+  color: red;
+}
+
 .header-title {
   /* background-color: #eee; */
   grid-area: title;
@@ -101,21 +112,24 @@ export default {};
 nav {
   grid-area: nav;
   display: flex;
-  background-color: #8da9c4;
+  /* background-color: #8da9c4; */
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   flex-basis: 35%;
   flex-wrap: wrap;
   border-radius: 5px;
+  justify-content: space-evenly;
 }
 button {
   font-family: "Oswald", sans-serif;
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: 400;
   text-transform: uppercase;
-  border-bottom: 1px solid #707070;
+  /* border-bottom: 1px solid #707070; */
   padding: 10px;
   border-radius: 5px;
+  cursor: pointer;
+  
 }
 .social-icons {
   display: flex;

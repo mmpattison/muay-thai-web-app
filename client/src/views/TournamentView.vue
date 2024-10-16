@@ -8,7 +8,7 @@
         <div class="location">{{ tournament.location }}</div>
       </div>
       <section id="buttons">
-        <details>
+        <details name="tournament-info">
           <summary>Gyms</summary>
           <ul >
             <router-link v-for="gym in gyms" :key="gym.id"
@@ -23,7 +23,7 @@
           </router-link>
           </ul>
         </details>
-        <details>
+        <details name="tournament-info">
           <summary>Fights</summary>
           <ul >
             <router-link v-for="fight in fights" :key="fight.id"
@@ -37,7 +37,7 @@
           </router-link>
           </ul>
         </details>
-        <details>
+        <details name="tournament-info">
           <summary>Fighters</summary>
           <ul >
             <router-link v-for="fighter in fighters" :key="fighter.id"
@@ -111,7 +111,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 
 
 #tournament-main {
@@ -182,5 +182,16 @@ details  > summary {
   background-color: #ddd;
 }
 
+details[open] > summary {
+  background-color: #CE2029;
+}
+
+details > ul {
+  background-color: #16166B;
+  border-radius: 5px;
+}
+li {
+  color:#ddd
+}
 
 </style>

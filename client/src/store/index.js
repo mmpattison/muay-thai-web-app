@@ -10,7 +10,7 @@ export function createStore(currentToken, currentUser) {
       fighters:[],
       fights: [],
       gyms: [],
-      
+      weightClasses: [],
     },
     
     mutations: {

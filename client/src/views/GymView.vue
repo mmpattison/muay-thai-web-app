@@ -31,6 +31,8 @@ export default {
     }
 };
 </script>
+
+<style>
 #gym-main {
   display: flex;
   flex-direction: column;
@@ -60,5 +62,4 @@ export default {
   gap: 20px;
   flex-wrap: wrap;
 }
-<style>
 </style>
