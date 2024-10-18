@@ -10,6 +10,7 @@ import axios from 'axios'
 /* import fontawesome core */
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faCartPlus, faTrashCan, faXmark, faMagnifyingGlass, faRotate, faTable, faGrip, fas }
   from '@fortawesome/free-solid-svg-icons'
 
@@ -22,6 +23,7 @@ library.add(faRotate);
 library.add(faTable);
 library.add(faGrip);
 library.add(fas);
+library.add(fab);
 
 // /* import fontawesome core */
 // import { library } from '@fortawesome/fontawesome-svg-core'
@@ -63,6 +65,6 @@ const store = createStore(currentToken, currentUser);
 const app = createApp(MyApp);
 app.use(store);
 app.use(router);
-// app.component('font-awesome-icon', FontAwesomeIcon);
+app.component('font-awesome-icon', FontAwesomeIcon);
 app.mount('#app');
 

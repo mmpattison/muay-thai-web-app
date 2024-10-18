@@ -33,8 +33,8 @@ CREATE TABLE tournament(
 CREATE TABLE weight_class(
 	weight_class_id serial PRIMARY KEY,
 	weight_class_name VARCHAR (50),
-	minimum_weight float NOT NULL,
-	maximum_weight float NOT NULL
+	minimum_weight float ,
+	maximum_weight float
 );
 
 CREATE TABLE gym (
@@ -102,11 +102,26 @@ VALUES
 
 INSERT INTO weight_class (weight_class_name, minimum_weight, maximum_weight)
 VALUES
-	('Pin Weight', '1', '102'),
-	('Straw Weight', '107.01', '112'),
-	('Fly Weight', '112.01', '117'),
-	('Feather Weight', '122.01', '127'),
-	('Welter Weight', '142.01', '147');
+	    ('Pin Weight', NULL, '102'),
+        ('Atom Weight', '102.1', '107'),
+        ('Straw Weight', '107.1', '112'),
+        ('Fly Weight', '112.1', '117'),
+        ('Bantam Weight', '117.1', '122'),
+        ('Feather Weight', '122.1', '127'),
+        ('Light Weight', '127.1', '132'),
+        ('Super Light Weight', '132.1', '137'),
+        ('Light Welter Weight', '137.1', '142'),
+        ('Welter Weight', '142.1', '147'),
+        ('Super Welter Weight', '147.1', '153'),
+        ('Light Middle Weight', '153.1', '159'),
+        ('Middle Weight', '159.1', '165'),
+        ('Super Middle Weight', '165.1', '172'),
+        ('Light Heavy Weight', '172.1', '179'),
+        ('Light Cruiser Weight', '179.1', '186'),
+        ('Cruiser Weight', '186.1', '195'),
+        ('Heavy Weight', '195.1', '215'),
+        ('Super Heavy Weight', '215.1', '250'),
+        ('Colossal Weight', '250.1', NULL);
 
 INSERT INTO gym (gym_name, gym_location, kru_name, overall_gym_record)
 VALUES

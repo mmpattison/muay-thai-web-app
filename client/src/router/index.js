@@ -10,6 +10,9 @@ import TournamentView from '../views/TournamentView.vue'
 import GymView from '../views/GymView.vue'
 import FightView from '../views/FightView.vue'
 import FighterView from '../views/FighterView.vue'
+import EditFighterView from '../views/EditFighterView.vue'
+import AddFighterView from '../views/AddFighterView.vue'
+
 
 
 /**
@@ -67,6 +70,22 @@ const routes = [
       component: LoginView,
       meta: {
         requiresAuth: false
+      }
+    },
+    {
+      path: "/fighter/:id",
+      name: "edit-fighter",
+      component: EditFighterView,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/tournament/:id/fighter/",
+      name: "add-fighter",
+      component: AddFighterView,
+      meta: {
+        requiresAuth: true
       }
     },
     {

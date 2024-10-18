@@ -8,6 +8,7 @@
     <div class="fighter-card">
         <img class="fighter-img" :src="fighter.imgUrl"/>
         <h2 class="fighter-name">{{ fighter.fighterName }}</h2>
+        
     </div>
      </router-link>
 </template>

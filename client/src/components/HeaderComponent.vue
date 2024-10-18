@@ -32,29 +32,19 @@
     <section id="socials">
       <ul class="social-icons">
         <li>
-         
-
-          <!-- <a href="https://www.facebook.com/TBA.Sanctioning">
-            <font-awesome-icon :icon="['fas', 'trash-can']" class="icon" title="this"/>
-          </a> -->
-          <font-awesome-icon
-      class="{ 'view-icon', active: cardView }"
-      v-on:click="cardView = true"
-      icon="fa-solid fa-grip"
-      title="View tiles"
-    />
+          <a href="https://www.facebook.com/TBA.Sanctioning">
+            <font-awesome-icon :icon="['fab', 'facebook']" class="icon" title="TBA facebook"/>
+          </a>
         </li>
         <li>
-          icon
-          <!-- <a href="https://www.instagram.com/thaiboxingassoc_sanctioning/">
-            <font-awesome-icon :icon="['fab', 'instagram']" />
-          </a> -->
+        <a href="https://www.instagram.com/thaiboxingassoc_sanctioning/">
+            <font-awesome-icon :icon="['fab', 'instagram']" class="icon"  title="TBA instagram"/>
+          </a>
         </li>
         <li>
-          icon
-          <!-- <a href="https://twitter.com/pammypanda1">
-            <font-awesome-icon :icon="['fab', 'x-twitter']" />
-          </a> -->
+          <a href="https://twitter.com/pammypanda1">
+            <font-awesome-icon :icon="['fab', 'x-twitter']" class="icon"  title="TBA twitter"/>
+          </a>
         </li>
       </ul>
     </section>

@@ -61,6 +61,8 @@ export default {
   justify-items: center;
 }
 
+
+
 #fight-information {
   background-color: #eef4ed;
   border: 2px solid black;

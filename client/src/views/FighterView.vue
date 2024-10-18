@@ -1,19 +1,45 @@
 <template>
   <div id="fighter-main">
-    <p id="name">{{ fighter.fighterName }}</p>
+    <p id="name">{{ fighter.fighterName }}
+      <span class="icon-container" v-if="isAdmin">
+          <router-link
+                  v-bind:to="{
+                    name: 'edit-fighter',
+                    params: {
+                      id: fighter.id,
+                    },
+                  }"
+                >
+                  <font-awesome-icon
+                    :icon="['fas', 'edit']"
+                    class="icon"
+                    title="edit fighter"
+                  />
+                </router-link>
+        </span>
+      </p>
 
     <div id="fighter">
       <div id="fighter-img-box">
         <img :src="fighter.imgUrl" class="fighter-img" />
+        
       </div>
       <ul id="fighter-details">
-        <li>Gym name but only have gym id in table</li>
-        <li>{{ fighter.fighterLocation }}</li>
+       
+        <li v-for="gym in gyms"
+            :key="gym.id"
+            :value="gym.id">
+          {{ gym.gymName }}
+        </li>
+        <li>Location: {{ fighter.fighterLocation }}</li>
         <li>{{ fighter.fighterExperienceLevel }}</li>
-        <li>weight class name but only have weightclass id</li>
-        <li>{{ fighter.fighterHeight }}</li>
-        <li>{{ fighter.fighterAge }}</li>
-        <li>{{ fighter.fighterRecord }}</li>
+        <!-- <li v-for="weightClass in weightClasses" :key="weightClass.id"
+        :value="weightClass.id">
+        {{ weightClass.weightClassName }}
+      </li> -->
+        <li>Height: {{ fighter.fighterHeight }}</li>
+        <li>Age: {{ fighter.fighterAge }}</li>
+        <li>Record: {{ fighter.fighterRecord }}</li>
       </ul>
     </div>
   </div>
@@ -22,12 +48,37 @@
 <script>
 import { ResourceService } from "../services/ResourceService";
 export default {
+  created() {
+    this.isLoading = true;
+
+Promise.all([
+  ResourceService.getGyms(),
+  ResourceService.getWeightClasses(),
+  
+]).then(([gymResponse, weightClassResponse]) => {
+  this.$store.commit("SET_GYMS", gymResponse.data);
+  this.$store.commit("SET_WEIGHT_CLASSES", weightClassResponse.data);
+  
+  this.isLoading = false;
+});
+  },
   computed: {
+
+    isAdmin() {
+      return (
+        this.$store.state.user &&
+        this.$store.state.user.role.includes("ROLE_ADMIN")
+      );
+    },
     fighter() {
       return this.$store.state.fighters.find((fighter) => {
         return fighter.id == this.$route.params.id;
       });
     },
+    gyms(){
+      return this.$store.state.gyms;
+    },
+    
   },
 };
 </script>
@@ -59,8 +110,18 @@ export default {
 }
 
 #fighter-img-box {
-  
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 400px;
+  height: 450px;
+  text-align: center;
+  padding: 10px;
+  margin: 20px;
+  background-color: #eef4ed;
+  justify-content: center;
+  align-content: center;
 }
+
 
 #fighter-img {
   padding: 20px;
@@ -68,14 +129,28 @@ export default {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  max-height: 400px;
+  max-height: 200px;
   object-fit: contain;
 }
 
 #fighter-details {
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 400px;
+  height: 450px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding: 10px;
   text-align: center;
+  background-color: #eef4ed;
+  justify-content: center;
+  align-content: center;
+}
+
+.icon {
+  padding: 2px;
+  width: 1em;
+  cursor: pointer;
 }
 </style>

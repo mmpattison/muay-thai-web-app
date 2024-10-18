@@ -1,5 +1,5 @@
 <template>
-  <div><tournament-list id="tournament-list"/></div>
+  <div><tournament-list id="tournament-list"/>
   <section id="about">
       <p>
         Quality not Quantity!
@@ -9,6 +9,7 @@
         where the integrity of Muay Thai is upheld with qualified Muay Thai officials and rules.
     </p>
   </section>
+</div>
 </template>
 
 <script>
@@ -28,7 +29,14 @@ export default {
 
 <style>
 
-
+#main-div {
+   display: grid;
+   grid-template-rows: auto auto;
+   grid-template-areas: 
+    "tournaments"
+    "about";
+    height: 100%;
+}
 
 #about {
     grid-area: main;
@@ -41,6 +49,12 @@ export default {
     justify-content: center;
     border-radius: 5px;
     padding: 10px;
+    overflow-y: hidden;
+}
 
+#tournament-list {
+  grid-area: tournaments;
+  overflow-y: auto;
+  max-height: 100%; 
 }
 </style>
