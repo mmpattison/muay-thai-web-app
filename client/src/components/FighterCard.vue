@@ -40,5 +40,6 @@ props: [
     width: 100%;
     height: auto;
     justify-content: center;
+    align-items: center;
 }
 </style>

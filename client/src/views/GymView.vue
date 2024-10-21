@@ -1,6 +1,7 @@
 <template>
   <div id="gym-main">
-    <p id="title">{{ gym.gymName }}</p>
+    <p id="title">{{ gym.gymName }}
+    </p>
     <p id="location">{{ gym.gymLocation }}</p>
     <div>
     <fighter-list id="fighter-list"/>

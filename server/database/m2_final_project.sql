@@ -135,7 +135,7 @@ INSERT INTO fighter (fighter_name, current_weight_class_id, fighter_experience_l
 		fighter_gender, fighter_record, current_gym_id, fighter_location, fighter_email, fighter_registration_status, img_url)
 VALUES
 	('Chun Li', 1, 'B Class', '43', '4ft 10in', 'Female', 'Muay Thai 3-1', 1,
-	 'Columbus, Ohio', 'c.li@gmail.com', 'Confirmed','https://e7.pngegg.com/pngimages/294/503/png-clipart-street-fighter-v-chun-li-super-street-fighter-iv-arcade-edition-arcade-game-balrog-others-miscellaneous-video-game.png' ),
+	 'Columbus, Ohio', 'c.li@gmail.com', 'Confirmed','https://art.pixilart.com/sr2cd05a1da8eac.png' ),
 	('Rose', 1, 'B Class', '23', '5ft 2in', 'Female', 'Muay Thai 1-0 Smokers 3-0', 3,
 	 'Nashville, Tennessee', 'rboxer@yahoo.com', 'Confirmed','https://preview.redd.it/what-are-the-chances-for-rose-returning-to-street-fighter-6-v0-2w2jp7yip7yc1.jpeg?width=1080&crop=smart&auto=webp&s=4cc6a25b63a8366b549815bbf8bf2aa49f55d681'),
 	 ('Kitana', 2, 'C Class/Novice', '43', '5ft 5in', 'Female', 'Muay Thai 0', 1,
@@ -151,7 +151,7 @@ VALUES
 	 ('Johnny Cage', 4, 'A Class/Open', '38', '5ft 7in', 'Male', 'Muay Thai 24-8 8 KO/TKO MMA 1-0', 2,
 	 'Chicago, Illinois', 'JohnnyC@hotmail.com', 'Confirmed','https://upload.wikimedia.org/wikipedia/en/7/7b/Johnny_Render_mk_11.png'),
 	 ('E. Honda', 5, 'B Class', '31', '5ft 8in', 'Male', 'Muay Thai 6-1', 1,
-	 'Columbus, Ohio', 'honda.e@gmail.com', 'Confirmed','https://w7.pngwing.com/pngs/993/471/png-transparent-street-fighter-ii-the-world-warrior-super-street-fighter-ii-street-fighter-iv-m-u-g-e-n-e-honda-sumo-miscellaneous-game-superhero.png'),
+	 'Columbus, Ohio', 'honda.e@gmail.com', 'Confirmed','https://www.ladose.net/wp-content/uploads/2018/01/SSF2T_E._Honda.png'),
 	 ('Ryu', 5, 'B Class', '27', '6ft 7in', 'Male', 'Muay Thai 4-1', 2,
 	 'Chicago, Illinois', 'ryu@hotmail.com', 'Confirmed','https://assets.vg247.com/current//2014/07/o7vij6.png');
 

@@ -128,12 +128,12 @@ public class JdbcFighterDao implements FighterDao {
     public Fighter createFighter(Fighter fighter) {
         Fighter newFighter;
         String sql = "INSERT INTO fighter (fighter_name, current_weight_class_id, fighter_experience_level, fighter_age, fighter_height," +
-                "fighter_gender, fighter_record, current_gym_id, fighter_location, fighter_email, fighter_registration_status)" +
-                "VALUES (?,?,?,?,?,?,?,?,?,?,?) RETURNING fighter_id;";
+                "fighter_gender, fighter_record, current_gym_id, fighter_location, fighter_email, fighter_registration_status, img_url)" +
+                "VALUES (?,?,?,?,?,?,?,?,?,?,?,?) RETURNING fighter_id;";
         try{
             long fighterId = template.queryForObject(sql, int.class, fighter.getFighterName(), fighter.getCurrentWeightClassId(), fighter.getFighterExperienceLevel(), fighter.getFighterAge(),
                     fighter.getFighterHeight(), fighter.getFighterGender(), fighter.getFighterRecord(), fighter.getCurrentGymId(), fighter.getFighterLocation(),
-                    fighter.getFighterEmail(), fighter.getFighterRegistrationStatus());
+                    fighter.getFighterEmail(), fighter.getFighterRegistrationStatus(), fighter.getImgUrl());
             newFighter = getFighterById(fighterId);
 
         }  catch (
@@ -150,12 +150,12 @@ public class JdbcFighterDao implements FighterDao {
     public Fighter updateFighter(Fighter fighter, long fighterId) {
         Fighter updatedFighter = null;
         String sql = "UPDATE fighter SET fighter_name = ?, current_weight_class_id = ?, fighter_experience_level = ?, fighter_age = ?, fighter_height = ?," +
-                "fighter_gender = ?, fighter_record = ?, current_gym_id = ?, fighter_location = ?, fighter_email = ?, fighter_registration_status = ? " +
+                "fighter_gender = ?, fighter_record = ?, current_gym_id = ?, fighter_location = ?, fighter_email = ?, fighter_registration_status = ?, img_url = ? " +
                 "WHERE fighter_id = ? ";
         try {
             int rowsAffected = template.update(sql, fighter.getFighterName(), fighter.getCurrentWeightClassId(), fighter.getFighterExperienceLevel(), fighter.getFighterAge(),
                     fighter.getFighterHeight(), fighter.getFighterGender(), fighter.getFighterRecord(), fighter.getCurrentGymId(), fighter.getFighterLocation(),
-                    fighter.getFighterEmail(), fighter.getFighterRegistrationStatus(), fighterId);
+                    fighter.getFighterEmail(), fighter.getFighterRegistrationStatus(), fighter.getImgUrl(), fighterId);
             if(rowsAffected == 0){
                 throw new DaoException("Zero rows affected, expected at least one");
             }

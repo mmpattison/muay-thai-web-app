@@ -1,6 +1,6 @@
 <template>
   <div id="fighter-main">
-    <p id="name">{{ fighter.fighterName }}
+    <p id="fighter-name">{{ fighter.fighterName }}
       <span class="icon-container" v-if="isAdmin">
           <router-link
                   v-bind:to="{
@@ -26,11 +26,11 @@
       </div>
       <ul id="fighter-details">
        
-        <li v-for="gym in gyms"
+        <!-- <li v-for="gym in gyms"
             :key="gym.id"
             :value="gym.id">
           {{ gym.gymName }}
-        </li>
+        </li> -->
         <li>Location: {{ fighter.fighterLocation }}</li>
         <li>{{ fighter.fighterExperienceLevel }}</li>
         <!-- <li v-for="weightClass in weightClasses" :key="weightClass.id"
@@ -67,6 +67,7 @@ Promise.all([
     isAdmin() {
       return (
         this.$store.state.user &&
+        this.$store.state.user.role &&
         this.$store.state.user.role.includes("ROLE_ADMIN")
       );
     },
@@ -93,7 +94,7 @@ Promise.all([
   row-gap: 20px;
 }
 
-#name {
+#fighter-name {
   grid-area: name;
   text-align: center;
   font-size: 28px;
@@ -110,7 +111,7 @@ Promise.all([
 }
 
 #fighter-img-box {
-  border: 2px solid black;
+  /* border: 2px solid ; */
   border-radius: 10px;
   width: 400px;
   height: 450px;
@@ -120,6 +121,8 @@ Promise.all([
   background-color: #eef4ed;
   justify-content: center;
   align-content: center;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -129,12 +132,12 @@ Promise.all([
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  max-height: 200px;
+ 
   object-fit: contain;
 }
 
 #fighter-details {
-  border: 2px solid black;
+  /* border: 2px solid black; */
   border-radius: 10px;
   width: 400px;
   height: 450px;
@@ -146,11 +149,13 @@ Promise.all([
   background-color: #eef4ed;
   justify-content: center;
   align-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .icon {
   padding: 2px;
   width: 1em;
   cursor: pointer;
+  color: red;
 }
 </style>

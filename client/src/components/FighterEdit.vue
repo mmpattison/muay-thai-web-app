@@ -48,7 +48,7 @@
             :key="weightClass.id"
             :value="weightClass.id"
           >
-            {{ weightClass.weightClassName }}
+            {{ weightClass.weightClassName }} ({{ weightClass. minimumWeight}} - {{ weightClass.maximumWeight }})
           </option>
         </select>
       </div>
@@ -62,15 +62,43 @@
         />
       </div>
       <div>
-        <label for="fighterHeigh">Height</label>
+        <label for="fighterHeight">Height</label>
         <input
           type="text"
-          id="fighterHeigh"
+          id="fighterHeight"
           name="fighterHeight"
           v-model="fighter.fighterHeight"
         />
       </div>
-
+      <div>
+        <label for="fighterRecord">Overall Record</label>
+        <input
+          type="text"
+          id="fighterRecord"
+          name="fighterRecord"
+          v-model="fighter.fighterRecord"
+        />
+      </div>
+      <div>
+        <label for="fighterExperienceLevel">Class</label>
+        <select
+          id="fighterExperienceLevel"
+          name="fighterExperienceLevel"
+          v-model="fighter.fighterExperienceLevel">
+        <option value="C Class">Class C/Novice (0-3 Combined Fight Record)</option>
+        <option value="B Class">Class B (4-12 Combined Fight Record)</option>
+        <option value="">Class A/Open (13+ Combined Fight Record) </option>
+        </select>
+      </div>
+      <div>
+        <label for="fighterGender">Gender You Will Fight Under</label>
+        <input
+          type="text"
+          id="fighterGender"
+          name="fighterGender"
+          v-model="fighter.fighterGender"
+        />
+      </div>
       <div>
         <label for="fighterImgUrl">Image URL</label>
         <input
@@ -79,6 +107,16 @@
           name="imgUrl"
           v-model="fighter.imgUrl"
         />
+        <div>
+        <label for="fighterRegistrationStatus">RegistrationStatus</label>
+        <select
+          id="fighterRegistrationStatus"
+          name="fighterRegistrationStatus"
+          v-model="fighter.fighterRegistrationStatus">
+        <option value="incomplete">Incomplete</option>
+        <option value="complete">Complete</option>
+        </select>
+      </div>
       </div>
       <div class="button-container">
         <button @click="cancel">Cancel</button>
@@ -100,10 +138,11 @@ export default {
         fighterLocation: "",
         fighterExperienceLevel: "",
         currentWeightClassId: this.weightClassId,
+        fighterGender: "",
         fighterHeight: "",
         fighterAge: "",
         fighterRecord: "",
-        imageUrl: "",
+        imgUrl: "",
         fighterEmail: "",
         fighterRegistrationStatus: "",
 
@@ -130,6 +169,7 @@ export default {
     },
   },
   created() {
+    console.log(this.fighterId)
     if (this.fighterId) {
       this.fighter = this.$store.state.fighters.find((fighter) => {
         return fighter.id == this.fighterId;
@@ -150,11 +190,17 @@ export default {
     gyms(){
       return this.$store.state.gyms;
     },
+    weightClasses(){
+      return this.$store.state.weightClasses;
+    },
   }
 
 }
 </script>
 
 <style>
-
+#edit-div {
+  height: 100%; 
+  overflow-y: auto; 
+}
 </style>

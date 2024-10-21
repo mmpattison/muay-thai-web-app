@@ -4,8 +4,8 @@
     <div id="tournament-details">
       <div id="details">
         <img :src="tournament.imgUrl" alt="Tournament Logo" class="logo" />
-        <div class="date">{{ tournament.startDate }} - {{ tournament.endDate }}</div>
-        <div class="location">{{ tournament.location }}</div>
+        <h3 class="date">{{ tournament.startDate }} - {{ tournament.endDate }}</h3>
+        <h3 class="location">{{ tournament.location }}</h3>
       </div>
       <section id="buttons">
         <details name="tournament-info">
@@ -38,7 +38,22 @@
           </ul>
         </details>
         <details name="tournament-info">
-          <summary>Fighters</summary>
+          <summary>Fighters
+          <span class="icon-container" v-if="isAdmin">
+            <router-link
+              v-bind:to="{
+                name: 'add-fighter',
+                params: { id: tournament.id },
+              }"
+            >
+              <font-awesome-icon
+                :icon="['fas', 'circle-plus']"
+                class="icon"
+                title="Add fighter"
+              />
+            </router-link>
+          </span>
+        </summary>
           <ul >
             <router-link v-for="fighter in fighters" :key="fighter.id"
             v-bind:to="{
@@ -86,6 +101,13 @@ export default {
 
   },
   computed: {
+    isAdmin() {
+      return (
+        this.$store.state.user &&
+        this.$store.state.user.role &&
+        this.$store.state.user.role.includes("ROLE_ADMIN")
+      );
+    },
     tournament() {
       return this.$store.state.tournaments.find((tournament) => {
         return tournament.id == this.$route.params.id;
@@ -142,11 +164,11 @@ export default {
 
 #details {
   
-  padding: 20px;
+  /* padding: 20px; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  /* gap: 10px; */
   
 }
 
@@ -158,7 +180,7 @@ export default {
 
 .date, .location {
   
-  padding: 20px;
+  /* padding: 20px; */
   width: 200px;
   text-align: center;
 }
@@ -180,6 +202,7 @@ details  > summary {
   cursor: pointer;
   border-radius: 5px;
   background-color: #ddd;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 details[open] > summary {
@@ -189,9 +212,18 @@ details[open] > summary {
 details > ul {
   background-color: #16166B;
   border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 270px;
 }
 li {
   color:#ddd
+}
+.icon {
+  padding: 2px;
+  width: 1em;
+  cursor: pointer;
+  color: red;
+  justify-content: right;
 }
 
 </style>

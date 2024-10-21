@@ -1,6 +1,6 @@
 <template>
   <div>
-    <fighter-edit/>
+    <fighter-edit :fighterId = "$route.params.id"/>
   </div>
 
 </template>

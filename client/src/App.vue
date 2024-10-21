@@ -1,4 +1,6 @@
 <template>
+  <head><title>Thai Boxing Association</title></head>
+  
   <div id="muay-thai-app">
    
       <header-component class="header"/>
@@ -14,8 +16,33 @@
 
 <script>
 import HeaderComponent from './components/HeaderComponent.vue';
+import { ResourceService } from './services/ResourceService';
 
 export default {
+  created(){
+
+this.isLoading = true;
+
+// Promise.all([
+//   ResourceService.getGyms(),
+//   ResourceService.getFights(),
+//   ResourceService.getFighters()
+  // ResourceService.getFightersByTournamentId(this.$route.params.id)
+// ]).then(([gymResponse, fightResponse, fighterResponse]) => {
+//   this.$store.commit("SET_GYMS", gymResponse.data);
+//   this.$store.commit("SET_FIGHTS", fightResponse.data);
+//   this.$store.commit("SET_FIGHTERS", fighterResponse.data);
+  // alert(fighterResponse.data[0].fighterName);
+//   this.isLoading = false;
+// });
+
+// SINGLE PROMISE
+// ResourceService.getGyms()
+// .then(response => {
+//   this.$store.commit("SET_GYMS", response.data)
+// });
+
+},
   components: {
   
     HeaderComponent
@@ -60,12 +87,22 @@ header {
     grid-area:main;
     background-color: #8da9c4;
     overflow: hidden;
+    overflow-y: auto;
   }
 
   li {
     list-style: none;
   }
 
+  a:link {
+    color:#0b2545;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color:#0b2545;
+
+  }
 
 
   footer {
@@ -124,5 +161,15 @@ form textarea {
 form div {
   margin-bottom: 1.5rem;
 }
+@media (max-width:425px) {
 
+header {
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+}
+
+nav {
+    align-self: stretch;
+}
+}
 </style>

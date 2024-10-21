@@ -32,17 +32,17 @@
     <section id="socials">
       <ul class="social-icons">
         <li>
-          <a href="https://www.facebook.com/TBA.Sanctioning">
+          <a href="https://www.facebook.com/TBA.Sanctioning" target="blank">
             <font-awesome-icon :icon="['fab', 'facebook']" class="icon" title="TBA facebook"/>
           </a>
         </li>
         <li>
-        <a href="https://www.instagram.com/thaiboxingassoc_sanctioning/">
+        <a href="https://www.instagram.com/thaiboxingassoc_sanctioning/" target="blank">
             <font-awesome-icon :icon="['fab', 'instagram']" class="icon"  title="TBA instagram"/>
           </a>
         </li>
         <li>
-          <a href="https://twitter.com/pammypanda1">
+          <a href="https://twitter.com/pammypanda1" target="blank">
             <font-awesome-icon :icon="['fab', 'x-twitter']" class="icon"  title="TBA twitter"/>
           </a>
         </li>
@@ -55,7 +55,7 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
 .header {
   grid-area: header;
   display: grid;
@@ -85,17 +85,19 @@ export default {};
 
 .icon {
   cursor: pointer;
-  color: red;
+  color:#0b2545;
+  font-size: 2rem;
 }
 
 .header-title {
   /* background-color: #eee; */
   grid-area: title;
   display: flex;
-  justify-content: center;
-  align-items: bottom;
+  justify-content: flex-end;
+  align-items: flex-end;
   /* font-size: 2em; */
   font-size: 2rem;
+  margin-bottom: -10px;
 
   /* width: 2fr; */
 }
@@ -113,11 +115,13 @@ nav {
 button {
   font-family: "Oswald", sans-serif;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: bold;
   text-transform: uppercase;
   /* border-bottom: 1px solid #707070; */
   padding: 10px;
+  border: 10px #0b2545;
   border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   
 }
