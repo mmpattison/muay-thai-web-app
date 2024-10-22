@@ -57,6 +57,9 @@ const ResourceService = {
 
   updateFighter(fighterId, fighter){
     return axios.put(`/fighters/${fighterId}`, fighter)
+  },
+  deleteFighter(fighterId){
+    return axios.delete(`/fighters/${fighterId}`)
   }
 
 

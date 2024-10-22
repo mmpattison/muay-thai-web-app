@@ -92,12 +92,13 @@ export default {};
 .header-title {
   /* background-color: #eee; */
   grid-area: title;
-  display: flex;
+  display: grid;
   justify-content: flex-end;
   align-items: flex-end;
   /* font-size: 2em; */
   font-size: 2rem;
-  margin-bottom: -10px;
+  margin-bottom: -80px;
+ 
 
   /* width: 2fr; */
 }
@@ -105,12 +106,12 @@ nav {
   grid-area: nav;
   display: flex;
   /* background-color: #8da9c4; */
-  align-items: center;
-  /* justify-content: center; */
+  /* align-items: center; */
+  
   flex-basis: 35%;
   flex-wrap: wrap;
   border-radius: 5px;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 button {
   font-family: "Oswald", sans-serif;
@@ -141,4 +142,37 @@ button {
 #socials {
   grid-area: socials;
 }
+
+  @media (max-width: 425px) {
+  .header {
+    grid-template-areas:
+      "logo1 title logo2"
+      "nav    nav   nav"
+      "socials socials socials";
+    grid-template-columns: 100px auto 100px; /* Keep logos smaller and title centered */
+    text-align: center;
+  }
+
+  #logo1, #logo2 {
+    height: 80px; /* Shrink logos on mobile */
+    padding: 5px;
+  }
+
+  .header-title {
+    font-size: 1.25rem; /* Shrink title size */
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .social-icons {
+    font-size: 1.2rem; /* Slightly smaller social icons */
+    margin-top: 10px;
+  }
+  }
+
 </style>

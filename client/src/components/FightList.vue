@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2>Fighters</h2>
+  
     <div class="fight-list">
       
     </div>
@@ -14,6 +14,9 @@
 </script>
 
 <style>
+
+
+
 #fights-table {
     grid-area: fights-table;
     display: block;

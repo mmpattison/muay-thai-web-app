@@ -163,13 +163,40 @@ form div {
 }
 @media (max-width:425px) {
 
-header {
-    /* flex-direction: column; */
-    flex-wrap: wrap;
-}
+  #muay-thai-app {
+    height: auto;
+  }
 
-nav {
-    align-self: stretch;
-}
+  nav {
+    width: 100%;
+    text-align: center;
+  }
+
+  footer {
+    font-size: 0.875rem;
+    padding: 8px;
+  }
+
+  form {
+    padding: 1rem;
+  }
+
+  form label {
+    font-size: 0.875rem;
+  }
+
+  form input, form select, form textarea {
+    padding: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  footer {
+    padding: 10px;
+    font-size: 0.875rem;
+  }
 }
 </style>

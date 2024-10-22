@@ -21,7 +21,7 @@ props: [
 }
 </script>
 
-<style>
+<style scoped>
 .fighter-card {
   border: 2px solid black;
   border-radius: 10px;
@@ -37,9 +37,10 @@ props: [
 
 .fighter-img {
     padding: 3px;
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 200px;
     justify-content: center;
     align-items: center;
+    object-fit: contain;
 }
 </style>

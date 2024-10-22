@@ -53,8 +53,12 @@ export default {
 }
 
 #tournament-list {
-  grid-area: tournaments;
-  overflow-y: auto;
-  max-height: 100%; 
+    display: flex;
+    grid-area: tournaments;
+    overflow-y: auto;
+    max-height: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
 }
 </style>

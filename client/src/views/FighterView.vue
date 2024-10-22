@@ -26,17 +26,17 @@
       </div>
       <ul id="fighter-details">
        
-        <!-- <li v-for="gym in gyms"
+        <li v-for="gym in gyms"
             :key="gym.id"
             :value="gym.id">
           {{ gym.gymName }}
-        </li> -->
+        </li>
         <li>Location: {{ fighter.fighterLocation }}</li>
         <li>{{ fighter.fighterExperienceLevel }}</li>
-        <!-- <li v-for="weightClass in weightClasses" :key="weightClass.id"
+        <li v-for="weightClass in weightClasses" :key="weightClass.id"
         :value="weightClass.id">
         {{ weightClass.weightClassName }}
-      </li> -->
+      </li>
         <li>Height: {{ fighter.fighterHeight }}</li>
         <li>Age: {{ fighter.fighterAge }}</li>
         <li>Record: {{ fighter.fighterRecord }}</li>
@@ -77,7 +77,20 @@ Promise.all([
       });
     },
     gyms(){
-      return this.$store.state.gyms;
+      return this.$store.state.gyms.filter((gym) => {
+        let currentFighter = this.$store.state.fighters.find((fighter) => {
+        return fighter.id == this.$route.params.id;
+        });
+         return gym.id == currentFighter.currentGymId;
+      });
+    },
+    weightClasses(){
+      return this.$store.state.weightClasses.filter((weightClass) => {
+        let currentFighter = this.$store.state.fighters.find((fighter) => {
+        return fighter.id == this.$route.params.id;
+        });
+         return weightClass.id == currentFighter.currentWeightClassId;
+      });
     },
     
   },
@@ -103,15 +116,16 @@ Promise.all([
 }
 
 #fighter {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  /* grid-template-columns: 1fr 1fr; */
   column-gap: 40px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 #fighter-img-box {
   /* border: 2px solid ; */
+  display:flex;
   border-radius: 10px;
   width: 400px;
   height: 450px;
@@ -120,20 +134,23 @@ Promise.all([
   margin: 20px;
   background-color: #eef4ed;
   justify-content: center;
-  align-content: center;
+  align-items: center;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 
-#fighter-img {
+.fighter-img {
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
- 
-  object-fit: contain;
+  /* width: 100%; */
+    
+    justify-content: center;
+    /* object-fit: contain; */
+  
 }
 
 #fighter-details {
@@ -145,11 +162,13 @@ Promise.all([
   flex-direction: column;
   gap: 20px;
   padding: 10px;
-  text-align: center;
+  /* text-align: center; */
   background-color: #eef4ed;
   justify-content: center;
-  align-content: center;
+  align-items: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  
 }
 
 .icon {
@@ -158,4 +177,45 @@ Promise.all([
   cursor: pointer;
   color: red;
 }
+
+
+@media (max-width: 425px) {
+
+  
+  #fighter {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-content: center;
+}
+#fighter-img-box {
+    width: 100%; 
+    max-width: 300px; 
+    height: auto; 
+  }
+
+  #fighter-img {
+    width: 100%; 
+    height: auto;
+    object-fit: contain; 
+  }
+
+  #fighter-details {
+    width: 100%; 
+    max-width: 300px; 
+    text-align: center; 
+    margin-top: 10px; 
+  }
+
+  #fighter-name {
+    font-size: 22px; 
+    text-align: center;
+  }
+
+  .icon-container {
+    display: inline-block;
+    margin-left: 10px; 
+  }
+}
+
 </style>

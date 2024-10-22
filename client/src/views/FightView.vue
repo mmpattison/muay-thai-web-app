@@ -1,9 +1,9 @@
 <template>
   <div id="fight-main">
     <div>
-      <fighter-list
-        :blueCornerFighter="blueCornerFighter"
-        :redCornerFighter="redCornerFighter"
+      <fighter-list id="fighter-list"
+        :blueCornerFighter="blueCornerFighter" 
+        :redCornerFighter="redCornerFighter" 
       />
     </div>
     <section>
@@ -61,7 +61,14 @@ export default {
   justify-items: center;
 }
 
-
+#fighter-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
 
 #fight-information {
   background-color: #eef4ed;

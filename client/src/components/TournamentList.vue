@@ -47,6 +47,16 @@ TournamentCards {
     font-weight: lighter;
 }
 #list-title{
-  margin-left:250px ;
+  align-content: center;
+  font-size: 28px;
+  /* margin-bottom: 20px; */
+  font-weight: bold;
+}
+
+@media (max-width: 425px) {
+  .tournament-list {
+    display: grid;
+    justify-content: center;
+}
 }
 </style>

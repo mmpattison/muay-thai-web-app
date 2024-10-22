@@ -156,7 +156,7 @@ export default {
 
 #tournament-details {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   column-gap: 40px; 
   align-items: center;
   justify-content: center;
@@ -203,20 +203,32 @@ details  > summary {
   border-radius: 5px;
   background-color: #ddd;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
 }
 
 details[open] > summary {
   background-color: #CE2029;
 }
 
-details > ul {
+details > ul{
   background-color: #16166B;
   border-radius: 5px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   width: 270px;
+  font-weight:bold;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
 }
+
+
 li {
   color:#ddd
+}
+
+li:hover{
+  background-color: #E6A817;
+  color: #16166B;
 }
 .icon {
   padding: 2px;
@@ -225,5 +237,25 @@ li {
   color: red;
   justify-content: right;
 }
+@media (max-width: 425px) {
+  #tournament-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
+  #buttons {
+    margin-top: 20px; 
+  }
+
+  details > summary {
+    width: 100%; 
+    text-align: center;
+  }
+
+  .logo {
+    max-height: 250px; 
+  }
+}
 </style>

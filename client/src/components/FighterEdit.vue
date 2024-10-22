@@ -121,6 +121,7 @@
       <div class="button-container">
         <button @click="cancel">Cancel</button>
         <button type="submit">Submit</button>
+        <button v-if="fighterId" @click="deleteFighter" class="delete-button">Delete</button>
       </div>
     </form>
   </div>
@@ -153,19 +154,26 @@ export default {
   methods: {
     submitFighter() {
       if (this.fighterId) {
-        //update
-        ResourceService.updateFighter(this.fighterId, this.fighter).then( (response) => {
+        // Update existing fighter
+        ResourceService.updateFighter(this.fighterId, this.fighter).then(response => {
           this.$router.push({ name: "home" });
         });
       } else {
-        //add
-        ResourceService.addFighter(this.fighter).then( (response) => {
+        // Add new fighter
+        ResourceService.addFighter(this.fighter).then(response => {
           this.$router.push({ name: "home" });
         });
       }
     },
     cancel() {
       this.$router.push({ name: "home" });
+    },
+    deleteFighter() {
+      if (confirm("Are you sure you want to delete this fighter?")) {
+        ResourceService.deleteFighter(this.fighterId).then(response => {
+          this.$router.push({ name: "home" });
+        });
+      }
     },
   },
   created() {
@@ -202,5 +210,10 @@ export default {
 #edit-div {
   height: 100%; 
   overflow-y: auto; 
+}
+
+.button-container {
+  display:flex;
+  justify-content: space-evenly;
 }
 </style>

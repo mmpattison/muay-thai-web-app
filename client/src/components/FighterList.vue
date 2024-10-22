@@ -1,6 +1,6 @@
 <template>
-  <section>
-    <h2>Fighters</h2>
+  <section class="fighter-list-main">
+    <h2 id="list-title">Fighters</h2>
     <div class="fighter-list">
     <fighter-card v-for="fighter in fighters" :key="fighter.id" :fighter="fighter"/>
   </div>
@@ -34,6 +34,19 @@ export default {
 .fighter-list {
   display: flex;
   justify-content: space-evenly;
+}
+
+
+#list-title{
+ align-content: center;
+  
+}
+
+@media (max-width: 425px) {
+  .fighter-list {
+    display: grid;
+    justify-content: center;
+}
 }
 
 
